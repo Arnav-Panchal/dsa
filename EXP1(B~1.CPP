@@ -1,0 +1,43 @@
+#include<iostream.h> 
+#include<conio.h> 
+#include<string.h> 
+#include<stdlib.h>
+int main()
+{
+clrscr();
+int i,n,low,high,mid;
+char a[50][50],key[20];
+cout<<"enter numbers";
+cin>>n;
+cout<<"enter number in ascending order: ";
+for(i=0;i<=n-1;i++)
+{
+cin>>a[i];
+}
+cout<<"enter number to be searched: ";
+cin>>key;
+low=0;
+high=n-1;
+while(low<=high)
+{
+mid=(low+high)/2;
+if(strcmp (key,a[mid])==0)  //strcmp is string comparision if they are same it will be zero or one.
+{
+cout<<"key found at pos"<<mid+1;
+exit(0);
+}
+else
+if(strcmp(key,a[mid])==1)
+{
+high=high;
+low=mid+1;
+}
+else
+{
+low=low;
+high=mid-1;
+}}
+cout<<"key not found";
+getch();
+return 0;
+}
